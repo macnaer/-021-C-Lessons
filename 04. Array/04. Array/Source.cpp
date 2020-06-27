@@ -73,27 +73,58 @@ int main() {
 	//Дано одновимірний масив. Знайти суму елементів з непарними індексами.
 
 
+	//const int SIZE = 10;
+	//int arr[SIZE];
+	//int sum = 0;
+
+	//for (int i = 0; i < SIZE; i++) {
+	//	arr[i] = rand() % 20 + 1;
+	//	cout << "arr [" << i << "]" << " = " << arr[i] << endl;
+	//}
+
+	//for (int i = 0; i < SIZE; i++) {
+	//	if (i % 2 != 0) {
+	//		cout << "index " << i << " value " << arr[i] << endl;
+	//		sum += arr[i];
+	//	}
+	//}
+
+	//cout << "Sum = " << sum << endl; 
+
 	const int SIZE = 10;
 	int arr[SIZE];
-	int sum = 0;
-
+	int max = 0, min = 100;
+	int min_index = 0, max_index = 0;;
+	cout << "Before ==================>>>>> " << endl;
 	for (int i = 0; i < SIZE; i++) {
 		arr[i] = rand() % 20 + 1;
 		cout << "arr [" << i << "]" << " = " << arr[i] << endl;
 	}
 
 	for (int i = 0; i < SIZE; i++) {
-		if (i % 2 != 0) {
-			cout << "index " << i << " value " << arr[i] << endl;
-			sum += arr[i];
+		if (arr[i] > max) {
+			max = arr[i];
+			max_index = i;
+		}
+		if (arr[i] < min) {
+			min = arr[i];
+			min_index = i;
 		}
 	}
 
-	cout << "Sum = " << sum << endl; 
 
+	cout << "Max element = " << max << " max index = " << max_index << endl;
+	cout << "Min element = " << min << " min index = " << min_index << endl;
+	
 
-
-
+	cout << "After ==================>>>>> " << endl;
+	int tmp = 0;
+	tmp = arr[max_index];
+	arr[max_index] = arr[min_index];
+	arr[min_index] = tmp;
+	for (int i = 0; i < SIZE; i++) {
+		cout << "arr [" << i << "]" << " = " << arr[i] << endl;
+	}
 
 
 	system("pause");
