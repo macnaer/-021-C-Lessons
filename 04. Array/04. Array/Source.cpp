@@ -56,19 +56,40 @@ int main() {
 */
 	/*int arr[7] = { 4,6,3,5,8,9,4 };*/
 
-	int arr[7];
+	/*int arr[7];*/
 	/*for (int i = 0; i < 7; i++) {
 		cout << "Enter index " << i << endl;
 		cin >> arr[i];
 	}*/
 
-	for (int i = 0; i < 7; i++) {
+	/*for (int i = 0; i < 7; i++) {
 		arr[i] = rand() % 20 - 10;
 	}
 
 	for (int i = 0; i < 7; i++) {
 		cout << arr[i] << endl;;
+	}*/
+
+	//Дано одновимірний масив. Знайти суму елементів з непарними індексами.
+
+
+	const int SIZE = 10;
+	int arr[SIZE];
+	int sum = 0;
+
+	for (int i = 0; i < SIZE; i++) {
+		arr[i] = rand() % 20 + 1;
+		cout << "arr [" << i << "]" << " = " << arr[i] << endl;
 	}
+
+	for (int i = 0; i < SIZE; i++) {
+		if (i % 2 != 0) {
+			cout << "index " << i << " value " << arr[i] << endl;
+			sum += arr[i];
+		}
+	}
+
+	cout << "Sum = " << sum << endl; 
 
 
 
